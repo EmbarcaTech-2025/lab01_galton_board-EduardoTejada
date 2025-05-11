@@ -38,6 +38,7 @@ pico_sdk_init()
 add_executable(lab-01-galton-board
   ./src/lab-01-galton-board.c 
   ./include/ssd1306_i2c.c
+  ./include/Display_Oled.c
 )
 
 pico_set_program_name(lab-01-galton-board "lab-01-galton-board")
@@ -60,7 +61,7 @@ target_include_directories(lab-01-galton-board PRIVATE
 # Add any user requested libraries
 target_link_libraries(lab-01-galton-board 
         hardware_i2c
-        
+        pico_rand
         )
 
 pico_add_extra_outputs(lab-01-galton-board)

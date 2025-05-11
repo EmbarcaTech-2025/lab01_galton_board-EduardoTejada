@@ -2,11 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/i2c.h"
-#include "ssd1306_font.h"
-#include "ssd1306_i2c.h"
+#include "./include/ssd1306_font.h"
+#include "./include/ssd1306_i2c.h"
+#include "pico/stdlib.h"
 
 // Calcular quanto do buffer será destinado à área de renderização
 void calculate_render_area_buffer_length(struct render_area *area) {
@@ -133,13 +133,19 @@ void ssd1306_draw_line(uint8_t *ssd, int x_0, int y_0, int x_1, int y_1, bool se
 }
 
 // Adquire os pixels para um caractere (de acordo com ssd1306_font.h)
-inline int ssd1306_get_font(uint8_t character)
+int ssd1306_get_font(uint8_t character)
 {
   if (character >= 'A' && character <= 'Z') {
     return character - 'A' + 1;
   }
   else if (character >= '0' && character <= '9') {
     return character - '0' + 27;
+  }
+  else if(character == 254){
+    return 37;
+  }
+  else if (character >= 201 && character <= 209) {
+    return character - 201 + 38;
   }
   else
     return 0;

@@ -65,4 +65,6 @@ typedef struct {
   uint8_t port_buffer[2];
 } ssd1306_t;
 
+int ssd1306_get_font(uint8_t character);
+
 #endif
