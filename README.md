@@ -19,7 +19,8 @@ Este projeto implementa uma versão simplificada de uma máquina **Pachinko**, u
 
 ## 📷 Demonstração
 
-> *(Insira aqui uma imagem ou vídeo do jogo rodando, caso disponível)*
+> ![image](https://github.com/user-attachments/assets/ad74d8ca-6b57-4e47-b1c7-6d5be18d9f14)
+
 
 ---
 
